@@ -1,7 +1,6 @@
 package com.appbg.appbg.domain.model;
 
 import java.math.BigDecimal;
-
 public class Producto {
   private Long id;
   private String nombre;
