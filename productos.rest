@@ -1,0 +1,2 @@
+### GET All Productos
+GET http://localhost:8081/producto
