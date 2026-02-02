@@ -1,7 +1,24 @@
-const Piezas = ({ denominacion }) => {
-  const parseValue = (denomStr) => {
-    return parseFloat(denomStr.replace("$", ""));
-  };
+import { useState, useEffect } from "react";
+
+const API_URL = 'http://localhost:8081/pago';
+
+const Piezas = () => {
+  const [denominaciones, setDenominaciones] = useState([]);
+
+  useEffect(() => {
+    fetchDenominaciones();
+  }, []);
+
+  async function fetchDenominaciones() {
+    try {
+      const response = await fetch(`${API_URL}/denominaciones`);
+      if (!response.ok) throw new Error('Error al cargar denominaciones');
+      const data = await response.json();
+      setDenominaciones(data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
 
   const isCoin = (value) => value < 1;
 
@@ -74,14 +91,14 @@ const Piezas = ({ denominacion }) => {
 
   return (
     <>
-      <div className="flex flex-wrap justify-between gap-4 p-4 m-4  bg-base-300">
-        {denominacion.map((denom, index) => {
-          const numValue = parseValue(denom);
+      <div className="flex flex-wrap justify-between gap-4 p-4 m-4 bg-base-300">
+        {denominaciones.map((denom) => {
+          const numValue = parseFloat(denom.valor);
           const denomInCents = Math.round(numValue * 100);
           return (
             <div
-              key={index}
-              className="flex flex-col items-center gap-2 cursor-pointer hover:scale-110 transition-transform"
+              key={denom.id}
+              className="flex flex-col items-center gap-2"
             >
               <div className="flex items-center justify-center">
                 {isCoin(numValue) ? (
@@ -90,7 +107,9 @@ const Piezas = ({ denominacion }) => {
                   <BillSvg value={numValue.toFixed(2)} />
                 )}
               </div>
-              <span className="text-sm font-semibold text-gray-700">20</span>
+              <span className="text-sm font-semibold text-gray-700">
+                Stock: {denom.cantidadDisponible}
+              </span>
             </div>
           );
         })}

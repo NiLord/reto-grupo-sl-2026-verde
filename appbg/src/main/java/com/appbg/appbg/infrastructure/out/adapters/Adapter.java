@@ -1,6 +1,7 @@
 package com.appbg.appbg.infrastructure.out.adapters;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Component;
 
@@ -22,6 +23,12 @@ public class Adapter implements ProductoRepository {
     return productoJpaRepository.findAll().stream()
         .map(this::toProducto)
         .toList();
+  }
+
+  @Override
+  public Optional<Producto> buscarPorId(Long id) {
+    return productoJpaRepository.findById(id)
+        .map(this::toProducto);
   }
 
   private Producto toProducto(ProductoEntity entity) {

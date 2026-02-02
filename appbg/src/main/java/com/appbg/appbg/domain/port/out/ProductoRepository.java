@@ -5,4 +5,6 @@ import java.util.*;
 
 public interface ProductoRepository {
     public List<Producto> listarProductos();
+
+    public Optional<Producto> buscarPorId(Long id);
 }
