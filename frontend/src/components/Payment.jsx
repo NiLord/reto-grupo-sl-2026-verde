@@ -9,6 +9,14 @@ const Payment = ({ denominacion }) => {
 
   const [devolver, setDevolver] = useState("$0.00");
 
+  function handleCleanSelectedProducts() {
+    console.log("Productos seleccionados limpiados");
+  }
+
+  function handlePay() {
+    console.log("Pago realizado");
+  }
+
   return (
     <div class="card card-border bg-base-300 w-96">
       <div class="card-body flex flex-col gap-6">
@@ -36,8 +44,12 @@ const Payment = ({ denominacion }) => {
         </div>
 
         <div class="card-actions justify-between">
-          <button class="btn btn-error">Limpiar</button>
-          <button class="btn btn-primary">Pagar</button>
+          <button onClick={handleCleanSelectedProducts} class="btn btn-error">
+            Limpiar
+          </button>
+          <button onClick={handlePay} class="btn btn-primary">
+            Pagar
+          </button>
         </div>
       </div>
     </div>

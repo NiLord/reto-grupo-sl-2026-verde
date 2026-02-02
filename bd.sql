@@ -40,3 +40,9 @@ INSERT INTO producto (nombre, precio, cantidad_disponible) VALUES
 ('Sándwich de Jamón', 4.50, 0),
 ('Papas Fritas', 1.50, 0),
 ('Galletas de Avena', 1.80, 0);
+
+UPDATE producto SET cantidad_disponible = 10;
+
+UPDATE denominacion SET cantidad_disponible = 25;
+
+
