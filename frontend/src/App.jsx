@@ -1,14 +1,14 @@
-import { useState } from "react";
 import "./App.css";
+import Products from "./pages/Products";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <div class="navbar bg-base-100 shadow-sm">
-        <a class="btn btn-ghost text-xl">Reto Grupo Verde</a>
+      <div className="navbar bg-base-100 shadow-sm mb-5">
+        <a className="btn btn-ghost text-xl">Reto Grupo Verde</a>
       </div>
+
+      <Products />
     </>
   );
 }
