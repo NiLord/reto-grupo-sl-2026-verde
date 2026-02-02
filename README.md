@@ -43,6 +43,3 @@ npm run dev
 **Notas de desarrollo**
 - El dominio contiene `Producto` en `appbg/src/main/java/com/appbg/appbg/domain/model/Producto.java` y un modelo `Moneda` en `appbg/src/main/java/com/appbg/appbg/domain/model/Moneda.java` para representar valores monetarios.
 - El controlador REST básico aún puede implementarse en `appbg/src/main/java/com/appbg/appbg/infrastructure/in/controller/Controller.java`.
-
-¿Quieres que implemente el controlador REST para `GET /api/products` o que actualice `Producto` para usar `Moneda`? Dime cuál prefieres y lo hago a continuación.
-
