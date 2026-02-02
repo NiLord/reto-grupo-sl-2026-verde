@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import Card from "../components/Card";
-import { CartIcon, CookieIcon } from "../icons";
-import CoffeeIcon from "../icons/CoffeeIcon";
-import JuiceIcon from "../icons/JuiceIcon";
-import CandyIcon from "../icons/CandyIcon";
+import { CartIcon, CookieIcon, CoffeeIcon, JuiceIcon, CandyIcon } from "../icons";
 
 // TEMP 
 const sampleProducts = [
