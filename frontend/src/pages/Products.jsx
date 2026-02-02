@@ -146,7 +146,7 @@ export default function Products() {
         <div className="flex items-center gap-4">
           {selectedProducts.size > 0 && (
             <div className="flex items-center gap-2 bg-blue-100 px-4 py-2 rounded">
-              <span className="font-semibold">
+              <span className="font-semibold text-black">
                 Total: ${totalSeleccionado.toFixed(2)}
               </span>
               <button
