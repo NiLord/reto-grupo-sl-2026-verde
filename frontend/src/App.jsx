@@ -1,14 +1,16 @@
 import "./App.css";
 import Products from "./pages/Products";
+import Payment from "./components/Payment";
 
 function App() {
   return (
     <>
-      <div className="navbar bg-base-100 shadow-sm mb-5">
-        <a className="btn btn-ghost text-xl">Reto Grupo Verde</a>
+      <div class="navbar bg-base-300 shadow-sm mb-5">
+        <a class="btn btn-ghost text-xl">Reto Grupo Verde</a>
       </div>
-
+  
       <Products />
+      <Payment />
     </>
   );
 }
