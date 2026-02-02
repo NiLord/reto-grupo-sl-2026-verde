@@ -105,6 +105,14 @@ const Payment = ({ total = 0, onPagoExitoso }) => {
     }
   }
 
+  function handleCleanSelectedProducts() {
+    console.log("Productos seleccionados limpiados");
+  }
+
+  function handlePay() {
+    console.log("Pago realizado");
+  }
+
   return (
     <div className="card card-border bg-base-300 w-96">
       <div className="card-body flex flex-col gap-6">
