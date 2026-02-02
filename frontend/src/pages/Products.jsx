@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import Card from "../components/Card";
+import { CartIcon, CookieIcon } from "../icons";
+import CoffeeIcon from "../icons/CoffeeIcon";
+import JuiceIcon from "../icons/JuiceIcon";
+import CandyIcon from "../icons/CandyIcon";
 
 // TEMP 
 const sampleProducts = [
@@ -9,42 +13,42 @@ const sampleProducts = [
     description: "Botella de agua mineral",
     price: 2.5,
     qty: 12,
-    image: "",
+    icon: CartIcon,
   },
   {
     id: 2,
     title: "Galletas",
     price: 3.75,
     qty: 8,
-    image: "",
+    icon: CookieIcon,
   },
   {
     id: 3,
     title: "Café",
     price: 1.2,
     qty: 20,
-    image: "",
+    icon: CoffeeIcon,
   },
   {
     id: 4,
     title: "Jugo Natural",
     price: 4.0,
     qty: 6,
-    image: "",
+    icon: JuiceIcon,
   },
   {
     id: 5,
     title: "Bébida energética",
     price: 5.5,
     qty: 10,
-    image: "",
+    icon: JuiceIcon,
   },
   {
     id: 6,
-    title: "Chocolate",
+    title: "Dulce",
     price: 6.25,
     qty: 4,
-    image: "",
+    icon: CandyIcon,
   },
 ];
 
@@ -82,7 +86,7 @@ export default function Products() {
         {sampleProducts.map((p) => (
           <Card
             key={p.id}
-            image={p.image}
+            icon={p.icon}
             title={p.title}
             price={p.price}
             qty={p.qty}

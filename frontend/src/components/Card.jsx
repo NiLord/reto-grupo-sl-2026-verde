@@ -3,6 +3,7 @@ import React from "react";
 
 export default function Card({
   image = "",
+  icon: IconComponent,
   title = "Card Title",
   price = null,
   qty = null,
@@ -29,15 +30,21 @@ export default function Card({
       }}
       className={`${baseClasses} ${interactiveClasses} ${selectedClasses}`}
     >
-      <figure>
-        <img src={image} alt={title} />
-      </figure>
+      {IconComponent ? (
+        <div className="flex justify-center pt-6">
+          <IconComponent />
+        </div>
+      ) : image ? (
+        <figure>
+          <img src={image} alt={title} />
+        </figure>
+      ) : null}
       <div className="card-body">
         <h2 className="card-title">{title}</h2>
         {price !== null && (
           <p className="font-medium">$ {Number(price).toFixed(2)}</p>
         )}
-        {qty !== null && <p className="text-xs">Disponible: {qty}</p>}
+        {qty !== null && <p className="text-s">Disponible: {qty}</p>}
         {children}
       </div>
     </div>
